@@ -2,7 +2,6 @@
 LOG_DIR="$HOME/log"
 LIMIT_MB=10
 echo "start"
-STEP=1
     PERCENT=$(( RANDOM % 100 + 1)) 
     mkdir -p "$LOG_DIR"
     TARGET_KB=$((LIMIT_MB * PERCENT * 1024 / 100))
@@ -15,5 +14,4 @@ STEP=1
     done
     echo "files have been created: $((FILE_NUM - 1)) total: $CURRENT_KB kb"
     echo ""
-    STEP=$((STEP +1))
 echo "finish. folder: $LOG_DIR"
