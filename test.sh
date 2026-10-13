@@ -4,6 +4,7 @@ LIMIT_MB=10
 echo "start"
     PERCENT=$(( RANDOM % 100 + 1)) 
     mkdir -p "$LOG_DIR"
+    rm -f "$LOG_DIR"/*
     TARGET_KB=$((LIMIT_MB * PERCENT * 1024 / 100))
     CURRENT_KB=0
     FILE_NUM=1
