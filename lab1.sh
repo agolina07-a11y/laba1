@@ -20,8 +20,9 @@ echo "max: $N%"
 echo ""
 if awk -v p="$PERCENT" -v n="$N" 'BEGIN {exit !(p <= n)}'; then
 	echo "Everything is fine, folder isn't exceeding the $N% limit."
+	exit 0
 else
-	echo "Limit excedeed! Strartig acrhiving..."
+	echo "Limit excedeed! Starting acrhiving..."
 
 	DIFF_PERCENT=$(awk -v p="$PERCENT" -v n="$N" 'BEGIN{ printf "%2.f", p - n}')
 	LIMIT_KB=$((LIMIT_MB * 1024))
