@@ -7,8 +7,10 @@ if [ ! -d "$log_dir" ]; then
 fi
 
 limit_kb="$2"
-size_l_d=$(du -sk "$papka" | awk -v lim="$limit_kb" '{print ($1/lim) * 100}')
+size_l_d=$(du -sk "$log_dir" | awk -v lim="$limit_kb" '{print ($1/lim) * 100}')
 
+echo "percent size log_dir: $size_l_d"
+echo ""
 percent_l_d="$3"
 files_del="$4"
 
@@ -18,7 +20,7 @@ if [ "$s" -eq 0 ]; then
 	echo "all okay"
 	exit 0
 else
-	sudo mkdir -p backup
-	find "$log_dir" -maxdepth 1 -type f -printf "%T@ %p\n" | sort -n | head -n "$files" | awk '{print $2}' | \
-	tar -czf "backup/backup_$(date +%Y%m%d_%H%M%S).tar.gz" -T - --remove-files
+	mkdir -p "$HOME/backup"
+	find "$log_dir" -maxdepth 1 -type f -printf "%T@ %p\n" | sort -n | head -n "$files_del" | awk '{print $2}' | \
+	tar -czf "$HOME/backup/backup_$(date +%Y%m%d_%H%M%S).tar.gz" -T - --remove-files
 fi
