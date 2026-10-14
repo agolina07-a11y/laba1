@@ -9,7 +9,7 @@ fi
 limit_kb="$2"
 size_l_d=$(du -sk "$log_dir" | awk -v lim="$limit_kb" '{print ($1/lim) * 100}')
 
-echo "percent size log_dir: $size_l_d"
+echo "percent size log_dir: $size_l_d%"
 echo ""
 percent_l_d="$3"
 files_del="$4"
