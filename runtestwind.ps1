@@ -18,10 +18,10 @@ function Run-Test {
     $ActualExit = $LASTEXITCODE
 
     if ($ActualExit -eq $ExpectedExit) {
-        Write-Host "Результат: ПРОЙДЕН" -ForegroundColor Green
+        Write-Host "Результат: ПРОЙДЕН"
         $script:PASSED++
     } else {
-        Write-Host "Результат: ПРОВАЛЕН" -ForegroundColor Red
+        Write-Host "Результат: ПРОВАЛЕН"
     }
 }
 
