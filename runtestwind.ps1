@@ -25,7 +25,7 @@ function Run-Test {
     }
 }
 
-Write-Host "ЗАПУСК ТЕСТОВ ДЛЯ LAB1WIND.PS1"
+Write-Host "Запуск тестов"
 
 if (-not (Test-Path $SCRIPT)) {
     Write-Host "Ошибка: скрипт $SCRIPT не найден в текущей директории" -ForegroundColor Red
