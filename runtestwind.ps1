@@ -11,7 +11,6 @@ function Run-Test {
     )
 
     $script:TOTAL++
-    Write-Host "----------------------------------------"
     Write-Host "Тест $($script:TOTAL): $TestName"
     Write-Host "Ввод: '$InputData' | Ожидаемый код выхода: $ExpectedExit"
 
