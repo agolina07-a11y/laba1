@@ -28,7 +28,7 @@ function Run-Test {
 Write-Host "Запуск тестов"
 
 if (-not (Test-Path $SCRIPT)) {
-    Write-Host "Ошибка: скрипт $SCRIPT не найден в текущей директории" -ForegroundColor Red
+    Write-Host "Ошибка: скрипт $SCRIPT не найден в текущей директории"
     exit 1
 }
 
