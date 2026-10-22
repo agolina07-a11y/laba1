@@ -42,9 +42,9 @@ Write-Host ""
 Write-Host "Пройдено тестов: $PASSED из $TOTAL"
 
 if ($PASSED -eq $TOTAL) {
-    Write-Host "Все тесты успешно пройдены" -ForegroundColor Green
+    Write-Host "Все тесты успешно пройдены"
     exit 0
 } else {
-    Write-Host "Некоторые тесты завершились с ошибкой." -ForegroundColor Red
+    Write-Host "Некоторые тесты завершились с ошибкой."
     exit 1
 }
